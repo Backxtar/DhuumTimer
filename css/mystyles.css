@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300");
+
+button[data-setter] {
+    outline: none;
+    background: transparent;
+    border: none;
+    font-family: "Roboto";
+    font-weight: 300;
+    font-size: 18px;
+    width: 25px;
+    height: 30px;
+    color: rgb(55, 139, 55);
+    cursor: pointer;
+}
+
+button[data-setter]:hover {
+    opacity: 0.5;
+}
+
+.container {
+    position: relative;
+    top: 30px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.alerts {
+    position: relative;
+    top: 60px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.setters {
+    position: absolute;
+    left: 85px;
+    top: 75px;
+}
+
+.minutes-set {
+    float: left;
+    margin-right: 28px;
+}
+
+.seconds-set {
+    float: right;
+}
+
+.controlls {
+    position: absolute;
+    left: 75px;
+    top: 105px;
+    text-align: center;
+}
+
+.display-remain-time {
+    font-family: "Roboto";
+    font-weight: 100;
+    font-size: 65px;
+    color: rgb(55, 139, 55);
+}
+
+#pause {
+    outline: none;
+    background: transparent;
+    border: none;
+    margin-top: 10px;
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+.play::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 22px solid rgb(55, 139, 55);
+}
+
+.pause::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    width: 15px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 1px;
+    border: 5px solid rgb(55, 139, 55);
+    border-top: none;
+    border-bottom: none;
+}
+
+#pause:hover {
+    opacity: 0.8;
+}
+
+.e-c-base {
+    fill: none;
+    stroke: #b6b6b6;
+    stroke-width: 4px;
+}
+
+.e-c-progress {
+    fill: none;
+    stroke: rgb(55, 139, 55);
+    stroke-width: 4px;
+    transition: stroke-dashoffset 0.7s;
+}
+
+.e-c-pointer {
+    fill: #fff;
+    stroke: rgb(55, 139, 55);
+    stroke-width: 2px;
+}
+
+#e-pointer {
+    transition: transform 0.7s;
+}
+
+h1, h2, h3, h4 {
+    text-align: center;
+    font-family: "Roboto";
+    color: rgb(78, 78, 78);
+}
+
+body {
+    background-color: #f7f7f7;
+    text-align: center;
+    font-family: "Roboto";
+}
