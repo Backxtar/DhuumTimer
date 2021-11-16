@@ -79,6 +79,11 @@ function timer(seconds) { //counts time, takes seconds
     }, 1000);
 }
 function pauseTimer(event) {
+    if (wholeTime < 600) {
+        fightAlert.innerHTML = 'Timer needs to be > 10 min! Try again!';
+        return;
+    }
+
     if (isStarted === false) {
 
         if (wholeTime > 600) {
@@ -118,7 +123,7 @@ function displayTimeLeft(timeLeft) { //displays time on the input
     displayOutput.textContent = displayString;
     update(timeLeft, wholeTime);
 
-
+    //6:25, 5:05, 3:45, 2:25, 1:05 SS
     switch (timeLeft) {
         case 599 :
             fightAlert.innerHTML = `${displayString} ➞ FIGHT!`;
@@ -131,6 +136,8 @@ function displayTimeLeft(timeLeft) { //displays time on the input
             window.speechSynthesis.speak(msg);
             break;
         case 570 :
+        case 480 :
+        case 390 :
             fightAlert.innerHTML = `${displayString} ➞ Green 1 goes UP!`;
             msg.text = "Green one goes UP!";
             window.speechSynthesis.speak(msg);
@@ -141,8 +148,52 @@ function displayTimeLeft(timeLeft) { //displays time on the input
             window.speechSynthesis.speak(msg);
             break;
         case 540 :
+        case 450 :
+        case 360 :
             fightAlert.innerHTML = `${displayString} ➞ Green 2 goes UP!`;
             msg.text = "Green two goes UP!";
+            window.speechSynthesis.speak(msg);
+            break;
+        case 520 :
+            fightAlert.innerHTML = `${displayString} ➞ Green 3 to HEART!`;
+            msg.text = "Green three to HEART!";                
+            window.speechSynthesis.speak(msg);
+            break;
+        case 510 :
+        case 420 :
+        case 330 :
+            fightAlert.innerHTML = `${displayString} ➞ Green 3 goes UP!`;
+            msg.text = "Green three goes UP!";
+            window.speechSynthesis.speak(msg);
+            break;
+        case 490 :
+            fightAlert.innerHTML = `${displayString} ➞ Green 1 to SQUARE!`;
+            msg.text = "Green one to SQUARE!";                
+            window.speechSynthesis.speak(msg);
+            break;
+        case 460 :
+            fightAlert.innerHTML = `${displayString} ➞ Green 2 to STAR!`;
+            msg.text = "Green two to STAR!";                
+            window.speechSynthesis.speak(msg);
+            break;
+        case 430 :
+            fightAlert.innerHTML = `${displayString} ➞ Green 3 to SPIRAL!`;
+            msg.text = "Green three to SPIRAL!";                
+            window.speechSynthesis.speak(msg);
+            break;
+        case 400 :
+            fightAlert.innerHTML = `${displayString} ➞ Green 1 to TRIANGLE!`;
+            msg.text = "Green one to TRIANGLE!";                
+            window.speechSynthesis.speak(msg);
+            break;
+        case 370 :
+            fightAlert.innerHTML = `${displayString} ➞ Green 2 to ARROW!`;
+            msg.text = "Green two to ARROW!";                
+            window.speechSynthesis.speak(msg);
+            break;
+        case 340 :
+            fightAlert.innerHTML = `${displayString} ➞ Green 3 to CIRCLE!`;
+            msg.text = "Green three to CIRCLE!";                
             window.speechSynthesis.speak(msg);
             break;
     }
