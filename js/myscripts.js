@@ -88,7 +88,7 @@ function timer(seconds) { //counts time, takes seconds
 }
 function pauseTimer(event) {
     if (wholeTime < 600) {
-        fightAlert.innerHTML = 'TIMER NEEDS TO BE BIGGER THAN 10 MIN!';
+        div.innerHTML = `<h2 id="fight_alert">TIMER NEEDS TO BE BIGGER THAN 10 MIN!</h2>`;
     } else {
         if (isStarted === false) {
 
@@ -96,7 +96,7 @@ function pauseTimer(event) {
                 let minutes = Math.floor(wholeTime/ 60);
                 let seconds = wholeTime % 60;
                 let displayString = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-                fightAlert.innerHTML = `${displayString} ➞ Count down has STARTED!`;
+                div.innerHTML = `<h2 id="fight_alert">${displayString} ➞ COUNTDOWN HAST STARTED!</h2>`;
             }
 
             timer(wholeTime);
