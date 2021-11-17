@@ -26,9 +26,14 @@ button[data-setter]:hover {
 
 .alerts {
     position: relative;
-    top: 30px;
+    top: 45px;
     width: 350px;
     margin: 0 auto;
+}
+
+.marks {
+    height: 32px;
+    vertical-align: middle;
 }
 
 .actions {
@@ -39,7 +44,7 @@ button[data-setter]:hover {
 
 .footer {
     position: relative;
-    top: 30px;
+    top: 50px;
     width: 350px;
     margin: 0 auto;
 }
@@ -135,10 +140,17 @@ button[data-setter]:hover {
     transition: transform 0.7s;
 }
 
-h1, h2, h4 {
+h1, h4 {
     text-align: center;
     font-family: "Roboto";
     color: rgb(78, 78, 78);
+}
+
+h2 {
+    text-align: center;
+    font-family: "Roboto";
+    color: rgb(78, 78, 78);  
+    display: inline;
 }
 
 h3 {

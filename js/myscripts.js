@@ -16,7 +16,7 @@ function update(value, timePercent) {
 const displayOutput = document.querySelector('.display-remain-time')
 const pauseBtn = document.getElementById('pause');
 const setterBtns = document.querySelectorAll('button[data-setter]');
-const fightAlert = document.getElementById('fight_alert');
+var div = document.getElementById('alerts');
 var audio = new Audio('sounds/notification.wav');
 audio.volume = 0.3;
 var msg = new SpeechSynthesisUtterance();
@@ -123,6 +123,36 @@ function pauseTimer(event) {
     }
 }
 
+function getHTML(time, green, icon) {
+    const display = `<h2 id="fight_alert">${time} ➞ GREEN ${green} TO </h2>`;
+    var add = null;
+
+    switch (icon) {
+        case 'arrow' :
+            add = display.concat(`<img class="marks" src="images/tags/arrow_marker.png">`);
+            break;
+        case 'circle' :
+            add = display.concat(`<img class="marks" src="images/tags/circle_marker.png">`);
+            break;
+        case 'heart' :
+            add = display.concat(`<img class="marks" src="images/tags/heart_marker.png">`);
+            break;
+        case 'square' :
+            add = display.concat(`<img class="marks" src="images/tags/square_marker.png">`);
+            break;
+        case 'star' :
+            add = display.concat(`<img class="marks" src="images/tags/star_marker.png">`);
+            break;
+        case 'spiral' :
+            add = display.concat(`<img class="marks" src="images/tags/spiral_marker.png">`);
+            break;
+        case 'triangle' :
+            add = display.concat(`<img class="marks" src="images/tags/triangle_marker.png">`);
+            break;
+    } 
+    return add;
+}
+
 function displayTimeLeft(timeLeft) { //displays time on the input
     let minutes = Math.floor(timeLeft / 60);
     let seconds = timeLeft % 60;
@@ -138,18 +168,18 @@ function displayTimeLeft(timeLeft) { //displays time on the input
             case 225 :
             case 145 :
             case 65 :
-                fightAlert.innerHTML = `${displayString} ➞ SOULSPLIT!`;
+                div.innerHTML = `<h2 id="fight_alert">${displayString} ➞ SOULSPLIT!</h2>`;
                 if (ss.checked) {
                     audio.play();
                 }
                 break;
             case 599 :
-                fightAlert.innerHTML = `${displayString} ➞ FIGHT!`;
+                div.innerHTML = `<h2 id="fight_alert">${displayString} ➞ FIGHT!</h2>`;
                 msg.text = "FIGHT!";
                 window.speechSynthesis.speak(msg);
                 break
             case 580 :
-                fightAlert.innerHTML = `${displayString} ➞ Green 1 to ARROW!`;
+                div.innerHTML = getHTML(displayString, '1', 'arrow');
                 if (green1.checked) {
                     msg.text = "Green one to ARROW!";
                     window.speechSynthesis.speak(msg);
@@ -162,14 +192,14 @@ function displayTimeLeft(timeLeft) { //displays time on the input
             case 210 :
             case 120 :
             case 30 :
-                fightAlert.innerHTML = `${displayString} ➞ Green 1 goes UP!`;
+                div.innerHTML = `<h2 id="fight_alert">${displayString} ➞ GREEN 1 GOES UP!</h2>`;
                 if (green1.checked) {
                     msg.text = "Green one goes UP!";
                     window.speechSynthesis.speak(msg);
                 }
                 break;
             case 550 :
-                fightAlert.innerHTML = `${displayString} ➞ Green 2 to CIRCLE!`;
+                div.innerHTML = getHTML(displayString, '2', 'circle');
                 if (green2.checked) {
                     msg.text = "Green two to CIRCLE!";
                     window.speechSynthesis.speak(msg);
@@ -181,14 +211,14 @@ function displayTimeLeft(timeLeft) { //displays time on the input
             case 270 :
             case 180 :
             case 90 :
-                fightAlert.innerHTML = `${displayString} ➞ Green 2 goes UP!`;
+                div.innerHTML = `<h2 id="fight_alert">${displayString} ➞ GREEN 2 GOES UP!</h2>`;
                 if (green2.checked) {
                     msg.text = "Green two goes UP!";
                     window.speechSynthesis.speak(msg);
                 }
                 break;
             case 520 :
-                fightAlert.innerHTML = `${displayString} ➞ Green 3 to HEART!`;
+                div.innerHTML = getHTML(displayString, '3', 'heart');
                 if (green3.checked) {
                     msg.text = "Green three to HEART!";                
                     window.speechSynthesis.speak(msg);
@@ -200,126 +230,126 @@ function displayTimeLeft(timeLeft) { //displays time on the input
             case 240 :
             case 150 :
             case 60 :
-                fightAlert.innerHTML = `${displayString} ➞ Green 3 goes UP!`;
+                div.innerHTML = `<h2 id="fight_alert">${displayString} ➞ GREEN 3 GOES UP!</h2>`;
                 if (green3.checked) {
                     msg.text = "Green three goes UP!";
                     window.speechSynthesis.speak(msg);
                 }
                 break;
             case 490 :
-                fightAlert.innerHTML = `${displayString} ➞ Green 1 to SQUARE!`;
+                div.innerHTML = getHTML(displayString, '1', 'square');
                 if (green1.checked) {
                     msg.text = "Green one to SQUARE!";                
                     window.speechSynthesis.speak(msg);
                 }
                 break;
             case 460 :
-                fightAlert.innerHTML = `${displayString} ➞ Green 2 to STAR!`;
+                div.innerHTML = getHTML(displayString, '2', 'star');
                 if (green2.checked) {
                     msg.text = "Green two to STAR!";                
                     window.speechSynthesis.speak(msg);
                 }
                 break;
             case 430 :
-                fightAlert.innerHTML = `${displayString} ➞ Green 3 to SPIRAL!`;
+                div.innerHTML = getHTML(displayString, '3', 'spiral');
                 if (green3.checked) {
                     msg.text = "Green three to SPIRAL!";                
                     window.speechSynthesis.speak(msg);
                 }
                 break;
             case 400 :
-                fightAlert.innerHTML = `${displayString} ➞ Green 1 to TRIANGLE!`;
+                div.innerHTML = getHTML(displayString, '1', 'triangle');
                 if (green1.checked) {
                     msg.text = "Green one to TRIANGLE!";                
                     window.speechSynthesis.speak(msg);
                 }
                 break;
             case 370 :
-                fightAlert.innerHTML = `${displayString} ➞ Green 2 to ARROW!`;
+                div.innerHTML = getHTML(displayString, '2', 'arrow');
                 if (green2.checked) {
                     msg.text = "Green two to ARROW!";                
                     window.speechSynthesis.speak(msg);
                 }
                 break;
             case 340 :
-                fightAlert.innerHTML = `${displayString} ➞ Green 3 to CIRCLE!`;
+                div.innerHTML = getHTML(displayString, '3', 'circle');
                 if (green3.checked) {
                     msg.text = "Green three to CIRCLE!";                
                     window.speechSynthesis.speak(msg);
                 }
                 break;
             case 310 :
-                fightAlert.innerHTML = `${displayString} ➞ Green 1 to HEART!`;
+                div.innerHTML = getHTML(displayString, '1', 'heart');
                 if (green1.checked) {
                     msg.text = "Green one to HEART!";                
                     window.speechSynthesis.speak(msg);
                 }
                 break;
             case 280 :
-                fightAlert.innerHTML = `${displayString} ➞ Green 2 to SQUARE!`;
+                div.innerHTML = getHTML(displayString, '2', 'square');
                 if (green2.checked) {
                     msg.text = "Green two to SQUARE!";                
                     window.speechSynthesis.speak(msg);
                 }
                 break;
             case 250 :
-                fightAlert.innerHTML = `${displayString} ➞ Green 3 to STAR!`;
+                div.innerHTML = getHTML(displayString, '3', 'star');
                 if (green3.checked) {
                     msg.text = "Green three to STAR!";                
                     window.speechSynthesis.speak(msg);
                 }
                 break;
             case 220 :
-                fightAlert.innerHTML = `${displayString} ➞ Green 1 to SPIRAL!`;
+                div.innerHTML = getHTML(displayString, '1', 'spiral');
                 if (green1.checked) {
                     msg.text = "Green one to SPIRAL!";                
                     window.speechSynthesis.speak(msg);
                 }
                 break;
             case 190 :
-                fightAlert.innerHTML = `${displayString} ➞ Green 2 to TRIANGLE!`;
+                div.innerHTML = getHTML(displayString, '2', 'triangle');
                 if (green2.checked) {
                     msg.text = "Green two to TRIANGLE!";                
                     window.speechSynthesis.speak(msg);
                 }
                 break;
             case 160 :
-                fightAlert.innerHTML = `${displayString} ➞ Green 3 to ARROW!`;
+                div.innerHTML = getHTML(displayString, '3', 'arrow');
                 if (green3.checked) {
                     msg.text = "Green three to ARROW!";                
                     window.speechSynthesis.speak(msg);
                 }
                 break;
             case 130 :
-                fightAlert.innerHTML = `${displayString} ➞ Green 1 to CIRCLE!`;
+                div.innerHTML = getHTML(displayString, '1', 'circle');
                 if (green1.checked) {
                     msg.text = "Green one to CIRCLE!";                
                     window.speechSynthesis.speak(msg);
                 }
                 break;
             case 100 :
-                fightAlert.innerHTML = `${displayString} ➞ Green 2 to HEART!`;
+                div.innerHTML = getHTML(displayString, '2', 'heart');
                 if (green2.checked) {
                     msg.text = "Green two to HEART!";                
                     window.speechSynthesis.speak(msg);
                 }
                 break;
             case 70 :
-                fightAlert.innerHTML = `${displayString} ➞ Green 3 to SQUARE!`;
+                div.innerHTML = getHTML(displayString, '3', 'square');
                 if (green3.checked) {
                     msg.text = "Green three to SQUARE!";                
                     window.speechSynthesis.speak(msg);
                 }
                 break;
             case 40 :
-                fightAlert.innerHTML = `${displayString} ➞ Green 1 to STAR!`;
+                div.innerHTML = getHTML(displayString, '1', 'star');
                 if (green1.checked) {
                     msg.text = "Green one to STAR!";                
                     window.speechSynthesis.speak(msg);
                 }
                 break;
             case 0 :
-                fightAlert.innerHTML = `${displayString} ➞ DHUUM should be dead!`;
+                div.innerHTML = `<h2 id="fight_alert">${displayString} ➞ DHUUM SHOULD BE DEAD!</h2>`;
                 msg.text = "DHUUM should be dead!";                
                 window.speechSynthesis.speak(msg);
                 break;
