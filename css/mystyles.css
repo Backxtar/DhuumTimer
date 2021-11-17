@@ -26,14 +26,20 @@ button[data-setter]:hover {
 
 .alerts {
     position: relative;
-    top: 60px;
+    top: 30px;
+    width: 350px;
+    margin: 0 auto;
+}
+
+.actions {
+    position: relative;
     width: 350px;
     margin: 0 auto;
 }
 
 .footer {
     position: relative;
-    top: 60px;
+    top: 30px;
     width: 350px;
     margin: 0 auto;
 }

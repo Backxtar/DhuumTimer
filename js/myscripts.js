@@ -22,6 +22,11 @@ audio.volume = 0.3;
 var msg = new SpeechSynthesisUtterance();
 msg.lang = "en-US";
 
+var green1 = document.getElementById('green1');
+var green2 = document.getElementById('green2');
+var green3 = document.getElementById('green3');
+var ss = document.getElementById('ss');
+
 let intervalTimer;
 let timeLeft;
 let wholeTime = 10 * 60; // manage this to set the whole time 
@@ -134,7 +139,9 @@ function displayTimeLeft(timeLeft) { //displays time on the input
             case 145 :
             case 65 :
                 fightAlert.innerHTML = `${displayString} ➞ SOULSPLIT!`;
-                audio.play();
+                if (ss.checked) {
+                    audio.play();
+                }
                 break;
             case 599 :
                 fightAlert.innerHTML = `${displayString} ➞ FIGHT!`;
@@ -143,8 +150,10 @@ function displayTimeLeft(timeLeft) { //displays time on the input
                 break
             case 580 :
                 fightAlert.innerHTML = `${displayString} ➞ Green 1 to ARROW!`;
-                msg.text = "Green one to ARROW!";
-                window.speechSynthesis.speak(msg);
+                if (green1.checked) {
+                    msg.text = "Green one to ARROW!";
+                    window.speechSynthesis.speak(msg);
+                }
                 break;
             case 570 :
             case 480 :
@@ -154,13 +163,17 @@ function displayTimeLeft(timeLeft) { //displays time on the input
             case 120 :
             case 30 :
                 fightAlert.innerHTML = `${displayString} ➞ Green 1 goes UP!`;
-                msg.text = "Green one goes UP!";
-                window.speechSynthesis.speak(msg);
+                if (green1.checked) {
+                    msg.text = "Green one goes UP!";
+                    window.speechSynthesis.speak(msg);
+                }
                 break;
             case 550 :
                 fightAlert.innerHTML = `${displayString} ➞ Green 2 to CIRCLE!`;
-                msg.text = "Green two to CIRCLE!";
-                window.speechSynthesis.speak(msg);
+                if (green2.checked) {
+                    msg.text = "Green two to CIRCLE!";
+                    window.speechSynthesis.speak(msg);
+                }
                 break;
             case 540 :
             case 450 :
@@ -169,13 +182,17 @@ function displayTimeLeft(timeLeft) { //displays time on the input
             case 180 :
             case 90 :
                 fightAlert.innerHTML = `${displayString} ➞ Green 2 goes UP!`;
-                msg.text = "Green two goes UP!";
-                window.speechSynthesis.speak(msg);
+                if (green2.checked) {
+                    msg.text = "Green two goes UP!";
+                    window.speechSynthesis.speak(msg);
+                }
                 break;
             case 520 :
                 fightAlert.innerHTML = `${displayString} ➞ Green 3 to HEART!`;
-                msg.text = "Green three to HEART!";                
-                window.speechSynthesis.speak(msg);
+                if (green3.checked) {
+                    msg.text = "Green three to HEART!";                
+                    window.speechSynthesis.speak(msg);
+                }
                 break;
             case 510 :
             case 420 :
@@ -184,88 +201,122 @@ function displayTimeLeft(timeLeft) { //displays time on the input
             case 150 :
             case 60 :
                 fightAlert.innerHTML = `${displayString} ➞ Green 3 goes UP!`;
-                msg.text = "Green three goes UP!";
-                window.speechSynthesis.speak(msg);
+                if (green3.checked) {
+                    msg.text = "Green three goes UP!";
+                    window.speechSynthesis.speak(msg);
+                }
                 break;
             case 490 :
                 fightAlert.innerHTML = `${displayString} ➞ Green 1 to SQUARE!`;
-                msg.text = "Green one to SQUARE!";                
-                window.speechSynthesis.speak(msg);
+                if (green1.checked) {
+                    msg.text = "Green one to SQUARE!";                
+                    window.speechSynthesis.speak(msg);
+                }
                 break;
             case 460 :
                 fightAlert.innerHTML = `${displayString} ➞ Green 2 to STAR!`;
-                msg.text = "Green two to STAR!";                
-                window.speechSynthesis.speak(msg);
+                if (green2.checked) {
+                    msg.text = "Green two to STAR!";                
+                    window.speechSynthesis.speak(msg);
+                }
                 break;
             case 430 :
                 fightAlert.innerHTML = `${displayString} ➞ Green 3 to SPIRAL!`;
-                msg.text = "Green three to SPIRAL!";                
-                window.speechSynthesis.speak(msg);
+                if (green3.checked) {
+                    msg.text = "Green three to SPIRAL!";                
+                    window.speechSynthesis.speak(msg);
+                }
                 break;
             case 400 :
                 fightAlert.innerHTML = `${displayString} ➞ Green 1 to TRIANGLE!`;
-                msg.text = "Green one to TRIANGLE!";                
-                window.speechSynthesis.speak(msg);
+                if (green1.checked) {
+                    msg.text = "Green one to TRIANGLE!";                
+                    window.speechSynthesis.speak(msg);
+                }
                 break;
             case 370 :
                 fightAlert.innerHTML = `${displayString} ➞ Green 2 to ARROW!`;
-                msg.text = "Green two to ARROW!";                
-                window.speechSynthesis.speak(msg);
+                if (green2.checked) {
+                    msg.text = "Green two to ARROW!";                
+                    window.speechSynthesis.speak(msg);
+                }
                 break;
             case 340 :
                 fightAlert.innerHTML = `${displayString} ➞ Green 3 to CIRCLE!`;
-                msg.text = "Green three to CIRCLE!";                
-                window.speechSynthesis.speak(msg);
+                if (green3.checked) {
+                    msg.text = "Green three to CIRCLE!";                
+                    window.speechSynthesis.speak(msg);
+                }
                 break;
             case 310 :
                 fightAlert.innerHTML = `${displayString} ➞ Green 1 to HEART!`;
-                msg.text = "Green one to HEART!";                
-                window.speechSynthesis.speak(msg);
+                if (green1.checked) {
+                    msg.text = "Green one to HEART!";                
+                    window.speechSynthesis.speak(msg);
+                }
                 break;
             case 280 :
                 fightAlert.innerHTML = `${displayString} ➞ Green 2 to SQUARE!`;
-                msg.text = "Green two to SQUARE!";                
-                window.speechSynthesis.speak(msg);
+                if (green2.checked) {
+                    msg.text = "Green two to SQUARE!";                
+                    window.speechSynthesis.speak(msg);
+                }
                 break;
             case 250 :
                 fightAlert.innerHTML = `${displayString} ➞ Green 3 to STAR!`;
-                msg.text = "Green three to STAR!";                
-                window.speechSynthesis.speak(msg);
+                if (green3.checked) {
+                    msg.text = "Green three to STAR!";                
+                    window.speechSynthesis.speak(msg);
+                }
                 break;
             case 220 :
                 fightAlert.innerHTML = `${displayString} ➞ Green 1 to SPIRAL!`;
-                msg.text = "Green one to SPIRAL!";                
-                window.speechSynthesis.speak(msg);
+                if (green1.checked) {
+                    msg.text = "Green one to SPIRAL!";                
+                    window.speechSynthesis.speak(msg);
+                }
                 break;
             case 190 :
                 fightAlert.innerHTML = `${displayString} ➞ Green 2 to TRIANGLE!`;
-                msg.text = "Green two to TRIANGLE!";                
-                window.speechSynthesis.speak(msg);
+                if (green2.checked) {
+                    msg.text = "Green two to TRIANGLE!";                
+                    window.speechSynthesis.speak(msg);
+                }
                 break;
             case 160 :
                 fightAlert.innerHTML = `${displayString} ➞ Green 3 to ARROW!`;
-                msg.text = "Green three to ARROW!";                
-                window.speechSynthesis.speak(msg);
+                if (green3.checked) {
+                    msg.text = "Green three to ARROW!";                
+                    window.speechSynthesis.speak(msg);
+                }
                 break;
             case 130 :
                 fightAlert.innerHTML = `${displayString} ➞ Green 1 to CIRCLE!`;
-                msg.text = "Green one to CIRCLE!";                
-                window.speechSynthesis.speak(msg);
+                if (green1.checked) {
+                    msg.text = "Green one to CIRCLE!";                
+                    window.speechSynthesis.speak(msg);
+                }
                 break;
             case 100 :
                 fightAlert.innerHTML = `${displayString} ➞ Green 2 to HEART!`;
-                msg.text = "Green two to HEART!";                
-                window.speechSynthesis.speak(msg);
+                if (green2.checked) {
+                    msg.text = "Green two to HEART!";                
+                    window.speechSynthesis.speak(msg);
+                }
                 break;
             case 70 :
                 fightAlert.innerHTML = `${displayString} ➞ Green 3 to SQUARE!`;
-                msg.text = "Green three to SQUARE!";                
-                window.speechSynthesis.speak(msg);
+                if (green3.checked) {
+                    msg.text = "Green three to SQUARE!";                
+                    window.speechSynthesis.speak(msg);
+                }
                 break;
             case 40 :
                 fightAlert.innerHTML = `${displayString} ➞ Green 1 to STAR!`;
-                msg.text = "Green one to STAR!";                
-                window.speechSynthesis.speak(msg);
+                if (green1.checked) {
+                    msg.text = "Green one to STAR!";                
+                    window.speechSynthesis.speak(msg);
+                }
                 break;
             case 0 :
                 fightAlert.innerHTML = `${displayString} ➞ DHUUM should be dead!`;
