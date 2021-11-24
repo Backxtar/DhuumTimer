@@ -25,7 +25,7 @@ msg.lang = "en-US";
 var green1 = document.getElementById('green1');
 var green2 = document.getElementById('green2');
 var green3 = document.getElementById('green3');
-var ss = document.getElementById('ss');
+var ss = document.getElementById('soulslam');
 
 let intervalTimer;
 let timeLeft;
